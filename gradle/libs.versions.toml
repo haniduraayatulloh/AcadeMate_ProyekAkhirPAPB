@@ -1,0 +1,41 @@
+[versions]
+# Menggunakan versi AGP yang stabil dan umum digunakan
+agp = "8.4.1"
+# Menggunakan versi Kotlin yang kompatibel dengan AGP
+kotlin = "1.9.23"
+coreKtx = "1.13.1"
+junit = "4.13.2"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+activity = "1.9.0"
+constraintlayout = "2.1.4"
+# Versi Hilt yang umum digunakan, pastikan sesuai dengan kebutuhan proyek
+hilt = "2.51.1"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+
+# Tambahan: Dependensi untuk Hilt (classpath plugin)
+hilt-android-gradle-plugin = { group = "com.google.dagger", name = "hilt-android-gradle-plugin", version.ref = "hilt" }
+# Tambahan: Dependensi utama Hilt untuk anotasi
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+# Tambahan: Compiler untuk Hilt
+hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+# Perbaikan: Menggunakan 'agp' sebagai referensi versi
+android-library = { id = "com.android.library", version.ref = "agp" }
+# Perbaikan: Menggunakan nama yang lebih jelas dan ID yang benar untuk Hilt
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
